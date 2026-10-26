@@ -115,7 +115,7 @@ git clone https://github.com/FlyingFish1119/ComfyUI-CausalTile.git
 - **`latent` (`LATENT`)**：外部编码好的底图 Latent。若尺寸与规划画布不一致，节点会自动在右、下边缘补齐或裁切，并在全部块完成后裁回原图对应的 Latent 尺寸。
 - **`tile_plan` (`CAUSAL_TILE_PLAN`)**：来自 `CausalTile 设置提示词` 的规划对象。
 - **`model` / `clip`**：采样模型与文本编码器。单次运行内相同提示词的 CLIP 编码结果会自动缓存复用，不会重复编码。
-- **`negative_prompt` / `seed` / `steps` / `cfg` / `sampler_name` / `scheduler`**：常规采样参数，所有分块共用同一个 `seed`。
+- **`negative_prompt` / `seed` / `steps` / `cfg` / `sampler_name` / `scheduler`**：常规采样参数，其中第 `k` 块（从 `0` 开始计数）实际使用的随机种子为 `seed + k`。
 - **`denoise` (`FLOAT`，默认 `0.35`，范围 `0.0 ~ 1.0`)**：内部块（`row > 0` 且 `col > 0`，即同时具备左、上两侧已重绘参考的块）的重绘幅度。
 - **`first_denoise` (`FLOAT`，默认 `-1.0`，范围 `-1.0 ~ 1.0`)**：首块 `(0, 0)` 的重绘幅度。首块没有任何已重绘邻居作为参考；设为负数（如默认的 `-1.0`）时直接跟随 `denoise`。
 - **`edge_denoise` (`FLOAT`，默认 `-1.0`，范围 `-1.0 ~ 1.0`)**：首行块（`row == 0, col > 0`，仅左侧有参考）与首列块（`row > 0, col == 0`，仅上侧有参考）的重绘幅度；设为负数时直接跟随 `denoise`。

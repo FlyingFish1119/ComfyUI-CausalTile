@@ -398,7 +398,7 @@ def run_causal_detail(latent_canvas: torch.Tensor,
         pos = _positive(tile.prompt)
         sampled = sample_latent(
             model, pos, negative, latent,
-            int(seed),
+            int(seed) + tile.index,
             steps, cfg, sampler_name, scheduler, tile_denoise,
         )
 
