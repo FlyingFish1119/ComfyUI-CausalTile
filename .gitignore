@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+*.log
+
+llm/_models_cache.json
