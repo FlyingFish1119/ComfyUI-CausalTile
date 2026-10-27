@@ -8,12 +8,25 @@ ComfyUI 的分块重绘节点。将大图切分为网格后，按从左到右、
 
 ## 效果预览
 
-![CausalTile 成品示例](workflow/CausalTile_preview.png)
+<p align="center">
+  <img src="workflow/CausalTile_preview.png" width="100%" alt="平涂插画示例"><br>
+  <sub><b>平涂插画</b> · 7680 × 4320 · 5 × 9 = 45 块</sub>
+</p>
 
-![CausalTile 成品示例](workflow/CausalTile_preview_realistic.png)
+<table>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <img src="workflow/CausalTile_preview_realistic.png" width="100%" alt="写实画面示例"><br>
+      <sub><b>写实画面</b> · 5760 × 4320 · 5 × 7 = 35 块</sub>
+    </td>
+    <td align="center" valign="top" width="50%">
+      <img src="workflow/CausalTile_preview_cyberpunk.png" width="100%" alt="赛博朋克示例"><br>
+      <sub><b>赛博朋克</b> · 3072 × 3072 · 5 × 5 = 25 块</sub>
+    </td>
+  </tr>
+</table>
 
-
-> 上图由 CausalTile 生成，PNG 文件内嵌了完整工作流（也可直接使用仓库中的 `workflow/CausalTile.json`），拖进 ComfyUI 即可加载。此处为缩略图（原图大小分别为 7680 * 4320 和 5760 * 4320）。
+> 三张示例均由 CausalTile 分块重绘产出，PNG 文件内嵌了完整工作流，拖进 ComfyUI 即可加载还原（也可直接使用仓库中的 `workflow/CausalTile.json`）。此处为缩略图，原图大小分别为 7680 × 4320、5760 × 4320 和 3072 × 3072。
 
 ## 解决的问题与工作机制
 
